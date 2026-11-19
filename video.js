@@ -78,6 +78,14 @@
     event.preventDefault();
   });
 
+  function pauseVideoOnOpen(event) {
+    if (event.type === 'auxclick' && event.button !== 1) return;
+    frame.querySelector('video')?.pause();
+  }
+
+  source.addEventListener('click', pauseVideoOnOpen);
+  source.addEventListener('auxclick', pauseVideoOnOpen);
+
   dialog.addEventListener('close', () => {
     frame.querySelector('video')?.pause();
     frame.replaceChildren();
