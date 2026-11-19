@@ -1,0 +1,2 @@
+# Publish real files, even when a machine has global LFS attributes.
+* -filter
